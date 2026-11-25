@@ -110,12 +110,72 @@
     {
       id: 1,
       code: 'SCENE 01',
+      phase: 'Electricity 101',
+      durationMs: 8500,
+      shortTitle: 'Electricity 101',
+      title: 'Electricity 101: Volts, Amps, Loads & The Closed Loop',
+      narration:
+        'Never wired anything before? Think of electricity just like water in a loop of pipe. Voltage (12V) is the pump pressure pushing electrons, Current (Amps) is the flow rate, the Light Bulb is a water wheel doing work, and a Switch is a shutoff valve. Electricity ONLY flows when the loop is completely closed back to the source!',
+      callouts: [
+        { tag: 'VOLTS (V)', tone: 'warning', text: 'Electrical pressure. Our 12V DC supply pushes gently—strong enough for LEDs, far too low to shock skin.' },
+        { tag: 'AMPS (A)', tone: 'primary', text: 'Amount of electrical flow. More bulbs or bigger loads draw more Amps (our fuses guard at 5A).' },
+        { tag: 'CLOSED LOOP', tone: 'success', text: 'Click the Switch Valve on the circuit to open/close the loop and watch flow start & stop.' }
+      ]
+    },
+    {
+      id: 2,
+      code: 'SCENE 02',
+      phase: 'Wire Anatomy',
+      durationMs: 9000,
+      shortTitle: 'Meet the Wires',
+      title: 'Meet the Wires: Hot, Neutral, Ground & Romex Numbers (14/2 vs 14/3)',
+      narration:
+        'Household Romex cable bundles multiple color-coded wires inside one protective jacket. Click each wire below to see its job—and test a "Ground Fault" to watch why the bare copper safety ground exists even though zero current flows through it normally.',
+      callouts: [
+        { tag: '14/2 vs 14/3', tone: 'primary', text: '14 = wire thickness (14 AWG, rated 15A). /2 or /3 counts the colored insulated wires (ground is always bonus!).' },
+        { tag: 'HOT & NEUTRAL', tone: 'warning', text: 'Black (+12V Hot) brings energy IN to the load; White (-12V Neutral) carries spent current BACK home.' },
+        { tag: 'GROUND SAFETY', tone: 'error', text: 'Bare copper stays at 0A normally—if a loose hot wire touches metal, Ground safely trips the fuse!' }
+      ]
+    },
+    {
+      id: 3,
+      code: 'SCENE 03',
+      phase: 'Parts Guide',
+      durationMs: 9500,
+      shortTitle: 'Parts & Why Needed',
+      title: 'Anatomy of Every Part: What Each Component Does & Why We Need It',
+      narration:
+        'Before building, meet every piece of hardware on your board. Click any of the 8 part cards to read what it is, why we need it, and what real-home component it mimics—or test the interactive Fuse Overload button to see why fuses prevent fires.',
+      callouts: [
+        { tag: 'FUSE BLOCK', tone: 'error', text: 'Click "Test 7A Overload" on the stage to watch a 5A fuse intentionally sacrifice itself to save the wires.' },
+        { tag: 'BUS BARS', tone: 'warning', text: 'Brass bars act like power strips inside the panel—keeping all White Neutrals and Bare Grounds neat.' },
+        { tag: 'ENCYCLOPEDIA', tone: 'primary', text: 'Read the full "What It Is / Why Needed / Real-Home Equivalent" breakdown in the right drawer.' }
+      ]
+    },
+    {
+      id: 4,
+      code: 'SCENE 04',
+      phase: 'Circuit Basics',
+      durationMs: 8500,
+      shortTitle: 'Series vs Parallel',
+      title: 'Series vs. Parallel: Why Homes ALWAYS Wire Outlets in Parallel',
+      narration:
+        'There are two ways to connect multiple outlets or bulbs: Series (one single chain) or Parallel (each gets its own branch). Click "Unplug Bulb #1" to see why Series wiring fails for homes while Parallel keeps every outlet at full 12V independently.',
+      callouts: [
+        { tag: 'SERIES FAIL', tone: 'error', text: 'Voltage splits (6V + 6V = dim!) and unplugging one lamp kills every outlet downstream.' },
+        { tag: 'PARALLEL WIN', tone: 'success', text: 'Every outlet receives full 12.0V across Hot & Neutral, and unplugging one never affects the others.' },
+        { tag: 'OUR BOARD', tone: 'primary', text: 'Outlets #1, #2, and #3 on our training board all wire in Parallel using pigtails.' }
+      ]
+    },
+    {
+      id: 5,
+      code: 'SCENE 05',
       phase: 'Goal & Safety',
       durationMs: 7500,
       shortTitle: 'Vision & 12V Safety',
       title: 'Project Vision & Critical Safety Rule ("12V DC ONLY")',
       narration:
-        'Build a 2 ft × 4 ft mock residential wall powered by a safe 12V DC 5A supply. Practice stripping NM-B Romex, bonding a panel, pigtailing parallel outlets, splitting a half-hot receptacle, and mastering 3-way switches—with zero shock hazard.',
+        'Now that you know how electricity, wires, and parts work, here is our finished 2 ft × 4 ft mock wall powered by a safe 12V DC 5A supply. You get real-world practice with Romex, panel bonding, parallel outlets, half-hot splitting, and 3-way switches—with zero shock hazard.',
       callouts: [
         { tag: 'CRITICAL', tone: 'warning', text: 'Label the board, both 12V DC E26 bulbs, and your DIY test plug "12V DC ONLY".' },
         { tag: 'NEVER AC', tone: 'error', text: 'Never plug the board or DIY test lamp into a 120V household wall outlet.' },
@@ -123,8 +183,8 @@
       ]
     },
     {
-      id: 2,
-      code: 'SCENE 02',
+      id: 6,
+      code: 'SCENE 06',
       phase: 'Bill of Materials',
       durationMs: 8500,
       shortTitle: 'Knolling Bench',
@@ -138,8 +198,8 @@
       ]
     },
     {
-      id: 3,
-      code: 'SCENE 03',
+      id: 7,
+      code: 'SCENE 07',
       phase: 'Step 1 · Carpentry',
       durationMs: 7500,
       shortTitle: 'Frame & Boxes',
@@ -153,8 +213,8 @@
       ]
     },
     {
-      id: 4,
-      code: 'SCENE 04',
+      id: 8,
+      code: 'SCENE 08',
       phase: 'Step 2 · Main Panel',
       durationMs: 8000,
       shortTitle: 'Main Panel & Bond',
@@ -168,8 +228,8 @@
       ]
     },
     {
-      id: 5,
-      code: 'SCENE 05',
+      id: 9,
+      code: 'SCENE 09',
       phase: 'Craft Lab 1',
       durationMs: 8000,
       shortTitle: 'Strip & Screw Torque',
@@ -183,8 +243,8 @@
       ]
     },
     {
-      id: 6,
-      code: 'SCENE 06',
+      id: 10,
+      code: 'SCENE 10',
       phase: 'Craft Lab 2',
       durationMs: 8000,
       shortTitle: 'Pigtails & Continuity',
@@ -198,8 +258,8 @@
       ]
     },
     {
-      id: 7,
-      code: 'SCENE 07',
+      id: 11,
+      code: 'SCENE 11',
       phase: 'Step 3 · Circuit 1',
       durationMs: 8500,
       shortTitle: 'Parallel & Half-Hot',
@@ -213,8 +273,8 @@
       ]
     },
     {
-      id: 8,
-      code: 'SCENE 08',
+      id: 12,
+      code: 'SCENE 12',
       phase: 'Step 4 · Circuit 2',
       durationMs: 8500,
       shortTitle: '3-Way Lighting (14/3)',
@@ -228,8 +288,8 @@
       ]
     },
     {
-      id: 9,
-      code: 'SCENE 09',
+      id: 13,
+      code: 'SCENE 13',
       phase: 'Hands-On Lab',
       durationMs: 9000,
       shortTitle: 'Wire-It-Yourself',
@@ -237,14 +297,14 @@
       narration:
         'Put your knowledge to the test before powering up! Select a conductor wire, then click its matching Brass, Silver, Green, or Common terminal screw across 3 progressive challenges. Wrong pairings warn immediately; clean wiring unlocks the checkoff.',
       callouts: [
-        { tag: 'STEP 1', tone: 'primary', text: 'Pick a conductor wire in the right-hand Challenge Drawer (or click a wire lead on stage).' },
+        { tag: 'STEP 1', tone: 'primary', text: 'Pick a conductor wire in the left palette (or switch challenges in the right drawer).' },
         { tag: 'STEP 2', tone: 'warning', text: 'Click the correct terminal screw on the device—don’t forget to break the Brass tab in Lab #2!' },
         { tag: 'SOUND FX', tone: 'success', text: 'Enable Sound in the top bar for tactile snaps, warning buzzes, and victory chimes.' }
       ]
     },
     {
-      id: 10,
-      code: 'SCENE 10',
+      id: 14,
+      code: 'SCENE 14',
       phase: 'Step 5 · Live Bench',
       durationMs: 10500,
       shortTitle: 'Live Bench & Faults',
@@ -291,7 +351,75 @@
     { id: 'dmm', cat: 'Tools', name: 'Digital multimeter (DC Volts & Continuity)', spec: 'Verifies ~12V DC polarity and neutral-to-ground continuity.' }
   ];
 
-  // Wire-It-Yourself Challenges (Panel 9)
+  // Beginner Parts Encyclopedia Data (Panel 3)
+  const PARTS_GUIDE = [
+    {
+      id: 'psu',
+      name: '12V DC Power Supply (5A)',
+      badge: 'POWER SOURCE',
+      what: 'A wall adapter (or 12V battery) that turns 120V AC household electricity into gentle, touch-safe 12V DC power.',
+      why: 'Acts as our "water pump." It supplies enough power to light RV LEDs and trigger multimeter readings with zero shock hazard.',
+      home: 'Street pole transformer + main utility meter feeding your house.'
+    },
+    {
+      id: 'fuse',
+      name: 'Blade Fuse Block & 5A Fuses',
+      badge: 'OVERLOAD GUARD',
+      what: 'A distribution hub holding tiny replaceable 5-Amp blade fuses—one for each branch circuit.',
+      why: 'If two bare wires ever short-circuit or draw over 5 Amps, the thin metal link inside the fuse melts in milliseconds before wires get hot!',
+      home: 'Your home’s main Circuit Breaker Panel (where breakers trip at 15A or 20A).'
+    },
+    {
+      id: 'busbars',
+      name: 'Brass Neutral & Ground Bus Bars',
+      badge: 'RETURN & SAFETY',
+      what: 'Solid brass screw-terminal strips inside the Main Panel enclosure.',
+      why: 'Every circuit’s White Neutral wire needs a clean return path to -12V, and every Bare Copper wire needs a shared safety Ground rail.',
+      home: 'Identical silver/aluminum Neutral & Ground bus bars inside a real breaker box.'
+    },
+    {
+      id: 'romex',
+      name: '14/2 & 14/3 NM-B Romex + Staples',
+      badge: 'WIRE HIGHWAY',
+      what: 'Flat plastic-sheathed cables holding solid copper wires (14/2 = Black + White + Bare; 14/3 adds Red), pinned to studs with 1/2" staples.',
+      why: 'Carries power cleanly from the panel to switches, outlets, and the ceiling light without loose dangling wires.',
+      home: 'Exact same 14 AWG NM-B Romex cable used inside real residential walls!'
+    },
+    {
+      id: 'boxes',
+      name: 'Nail-On Single-Gang & Octagon Boxes',
+      badge: 'CONTAINMENT',
+      what: 'Sturdy blue plastic enclosures nailed to studs (single-gang for switches/outlets; octagon for the ceiling fixture).',
+      why: 'Protects wire splices from physical damage and keeps any accidental spark safely contained inside fire-rated plastic.',
+      home: 'Standard residential rough-in electrical boxes nailed before drywall.'
+    },
+    {
+      id: 'wago',
+      name: 'Wago 221 Lever Nuts & Wire Nuts',
+      badge: 'SPLICE BRIDGES',
+      what: 'Insulated clamp connectors (orange flip-levers or twist-on cones) that join 2 to 5 stripped copper wires electrically.',
+      why: 'Allows us to make parallel "pigtail" junctions inside crowded boxes so downstream outlets stay powered reliably.',
+      home: 'Used inside virtually every junction box in modern residential wiring.'
+    },
+    {
+      id: 'outlet',
+      name: '15A Duplex Receptacles (Outlets)',
+      badge: 'POWER PORTS',
+      what: 'Standard two-socket wall outlets with Brass screws (Hot), Silver screws (Neutral), Green screw (Ground), and break-off side tabs.',
+      why: 'Lets us plug in our 12V test lamp—and by snapping ONLY the brass tab on Outlet #3, we make top half switched and bottom half always hot!',
+      home: 'Standard bedroom/living room wall outlets (often split for a bedside lamp).'
+    },
+    {
+      id: 'switches',
+      name: 'Single-Pole & 3-Way Switches',
+      badge: 'TRAFFIC VALVES',
+      what: 'Single-Pole = simple ON/OFF gate (2 brass screws). 3-Way = 2-path diverter (1 dark Common screw + 2 brass Traveler screws).',
+      why: 'Single-pole toggles half of Outlet #3; two 3-way switches let you control the ceiling light from either end of the board.',
+      home: 'Single-pole bedroom switches and 3-way hallway/staircase switches.'
+    }
+  ];
+
+  // Wire-It-Yourself Challenges (Panel 13)
   const WIRING_CHALLENGES = [
     {
       id: 0,
@@ -352,10 +480,18 @@
     playing: false,
     speed: 1.0,
 
-    // Panel 1
+    // New Beginner Panels 1–4
+    introLoopClosed: true,
+    introWireSel: 'black', // 'black' | 'red' | 'white' | 'bare'
+    introGroundFault: false,
+    introPartSel: 'fuse',
+    introFuseOverload: false,
+    introBulbRemoved: false,
+
+    // Panel 5 (Safety)
     safetyHotspot: 'panel',
 
-    // Panel 2
+    // Panel 6 (BOM)
     bomCat: 'All',
     bomSelected: 'romex143',
     bomChecked: new Set(['plywood', 'studs', 'psu', 'dmm']),
@@ -511,7 +647,7 @@
   }
 
   function recordVerifyObservation() {
-    if (state.panel !== 10) return;
+    if (state.panel !== 14) return;
     const ev = evaluateSim();
     const v = state.sim.verify;
     const sock = state.sim.lampSocket;
@@ -724,8 +860,373 @@
   // 6. PANEL RENDERERS (1 THROUGH 10)
   // =========================================================================
 
-  // PANEL 1: Vision & 12V Safety
+  // PANEL 1: Electricity 101 — Water Analogy, Volts, Amps, Load & Closed Loop
   function renderPanel1(c) {
+    const on = state.introLoopClosed;
+    return `
+      ${svgDefs(c)}
+      ${svgBackground(c, 'PANEL 01 · ELECTRICITY 101 — CLICK THE VALVE / SWITCH TO OPEN OR CLOSE THE LOOP')}
+
+      <!-- Left: Water Pipe Analogy -->
+      <rect x="28" y="48" width="522" height="398" rx="14" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="2"/>
+      <text x="289" y="78" text-anchor="middle" fill="${c.text}" font-size="14.5" font-weight="800">WATER ANALOGY (HOW IT FEELS)</text>
+
+      <!-- Pipe Loop -->
+      <rect x="92" y="138" width="394" height="222" rx="34" fill="none" stroke="#38bdf8" stroke-width="24" opacity="0.28"/>
+      <rect x="92" y="138" width="394" height="222" rx="34" fill="none" stroke="#0284c7" stroke-width="4"/>
+      ${on ? `<rect x="92" y="138" width="394" height="222" rx="34" fill="none" stroke="#38bdf8" stroke-width="8" stroke-dasharray="10 14" class="anim-flow"/>` : ''}
+
+      <!-- Water Pump = Voltage -->
+      <rect x="52" y="210" width="84" height="78" rx="12" fill="${c.stageBg}" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="94" y="242" text-anchor="middle" fill="#f59e0b" font-size="12.5" font-weight="800">PUMP</text>
+      <text x="94" y="260" text-anchor="middle" fill="${c.text}" font-size="11" font-weight="700">= 12V Volts</text>
+      <text x="94" y="276" text-anchor="middle" fill="${c.muted}" font-size="10">(Pressure)</text>
+
+      <!-- Water Wheel = Load -->
+      <circle cx="486" cy="249" r="38" fill="${c.stageBg}" stroke="${on ? '#fde047' : '#64748b'}" stroke-width="3"/>
+      <path d="M460 249 L512 249 M486 223 L486 275" stroke="${on ? '#f59e0b' : '#64748b'}" stroke-width="4" stroke-linecap="round"/>
+      <text x="486" y="308" text-anchor="middle" fill="${c.text}" font-size="11.5" font-weight="800">Wheel = Load</text>
+
+      <!-- Shutoff Valve = Switch -->
+      <g class="svg-hit" data-action="intro-toggle-loop">
+        <rect x="228" y="108" width="124" height="54" rx="10" fill="${on ? c.ok : c.danger}" fill-opacity="0.18" stroke="${on ? c.ok : c.danger}" stroke-width="2.5"/>
+        <text x="290" y="132" text-anchor="middle" fill="${c.text}" font-size="12" font-weight="800">${on ? 'VALVE OPEN' : 'VALVE SHUT'}</text>
+        <text x="290" y="150" text-anchor="middle" fill="${on ? c.ok : c.danger}" font-size="10.5" font-weight="700">${on ? 'Water Flowing' : 'Blocked (0 Flow)'}</text>
+      </g>
+
+      <text x="289" y="394" text-anchor="middle" fill="${c.text}" font-size="12" font-weight="700">Flow Speed = Current (Amps)</text>
+      <text x="289" y="416" text-anchor="middle" fill="${c.muted}" font-size="11.5">No return pipe back to pump = Zero flow anywhere in the pipe!</text>
+
+      <!-- Right: Real 12V DC Electrical Circuit -->
+      <rect x="570" y="48" width="522" height="398" rx="14" fill="${c.cardBg}" stroke="${on ? c.ok : c.cardStroke}" stroke-width="2"/>
+      <text x="831" y="78" text-anchor="middle" fill="${c.text}" font-size="14.5" font-weight="800">REAL 12V DC CIRCUIT</text>
+
+      <!-- Wire Loop -->
+      <path d="M634 210 L634 138 L1028 138 L1028 212" fill="none" stroke="${c.blackWireHighlight}" stroke-width="8" stroke-linecap="round"/>
+      ${on ? `<path d="M634 210 L634 138 L1028 138 L1028 212" fill="none" stroke="${c.hotGlow}" stroke-width="3" class="anim-flow"/>` : ''}
+
+      <path d="M1028 286 L1028 360 L634 360 L634 288" fill="none" stroke="${c.whiteWire}" stroke-width="8" stroke-linecap="round"/>
+      ${on ? `<path d="M1028 286 L1028 360 L634 360 L634 288" fill="none" stroke="${c.hotGlow}" stroke-width="3" class="anim-flow"/>` : ''}
+
+      <!-- 12V Supply -->
+      <rect x="592" y="210" width="88" height="78" rx="12" fill="${c.stageBg}" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="636" y="238" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="800">12V DC</text>
+      <text x="636" y="256" text-anchor="middle" fill="${c.text}" font-size="11" font-weight="700">+ Hot Out</text>
+      <text x="636" y="274" text-anchor="middle" fill="${c.muted}" font-size="10.5">- Return</text>
+
+      <!-- 12V LED Bulb -->
+      ${on ? `<circle cx="1028" cy="249" r="52" fill="url(#bulb-glow)" class="anim-glow"/>` : ''}
+      <circle cx="1028" cy="249" r="30" fill="${on ? '#fde047' : '#e2e8f0'}" stroke="${on ? '#f59e0b' : '#64748b'}" stroke-width="3"/>
+      <text x="1028" y="253" text-anchor="middle" fill="#111827" font-size="12" font-weight="900">${on ? 'LIT!' : 'OFF'}</text>
+      <text x="1028" y="302" text-anchor="middle" fill="${c.text}" font-size="11.5" font-weight="800">12V Bulb (Load)</text>
+
+      <!-- Interactive Electrical Switch -->
+      <g class="svg-hit" data-action="intro-toggle-loop">
+        <rect x="768" y="108" width="132" height="54" rx="10" fill="${on ? c.ok : c.danger}" fill-opacity="0.18" stroke="${on ? c.ok : c.danger}" stroke-width="2.5"/>
+        <text x="834" y="132" text-anchor="middle" fill="${c.text}" font-size="12" font-weight="800">${on ? 'SWITCH CLOSED' : 'SWITCH OPEN'}</text>
+        <text x="834" y="150" text-anchor="middle" fill="${on ? c.ok : c.danger}" font-size="10.5" font-weight="700">${on ? 'Click to Open Gap' : 'Click to Close Loop'}</text>
+      </g>
+
+      <text x="831" y="394" text-anchor="middle" fill="${on ? c.ok : c.muted}" font-size="12" font-weight="800">
+        ${on ? 'Complete Loop: 12.0V across bulb → 0.5A flowing!' : 'Broken Loop: Switch gap stops ALL current immediately.'}
+      </text>
+      <text x="831" y="416" text-anchor="middle" fill="${c.muted}" font-size="11.5">Energy moves through Black Hot (+) and returns via White Neutral (-).</text>
+
+      <!-- Bottom DC vs AC Explainer Card -->
+      <rect x="28" y="464" width="1064" height="110" rx="12" fill="${c.cardBg}" stroke="${c.warn}" stroke-width="2"/>
+      <text x="48" y="492" fill="${c.warn}" font-size="13" font-weight="800">DC vs. AC IN 10 SECONDS — WHY OUR BOARD USES 12V DC:</text>
+      <text x="48" y="518" fill="${c.text}" font-size="12.5">• <tspan font-weight="700">12V DC (Direct Current):</tspan> Flows steadily in one direction (+ to -). Touch-safe voltage—zero shock risk while learning!</text>
+      <text x="48" y="542" fill="${c.text}" font-size="12.5">• <tspan font-weight="700">120V AC (Real House):</tspan> Flips direction 60 times/sec and can shock or burn—yet uses the <tspan font-weight="700" fill="${c.ok}">exact same switches, outlets &amp; Romex rules</tspan> you practice here.</text>
+    `;
+  }
+
+  // PANEL 2: Meet the Wires — Hot, Neutral, Ground & Romex Numbers
+  function renderPanel2(c) {
+    const sel = state.introWireSel;
+    const gf = state.introGroundFault;
+    const wireInfo = {
+      black: {
+        title: 'BLACK WIRE — HOT (+12V Supply)',
+        desc: 'Carries pressurized electrical energy FROM the Main Panel fuse TO switches and outlets. Always lands on BRASS screws (or Dark Common on 3-ways).'
+      },
+      red: {
+        title: 'RED WIRE — 2nd HOT / 3-WAY TRAVELER (Only in 14/3)',
+        desc: 'Exactly like Black, Red is an active hot wire! Our board uses Red in 14/3 Romex as the second "traveler" rail between 3-Way Switch A and Switch B.'
+      },
+      white: {
+        title: 'WHITE WIRE — NEUTRAL (-12V Return Path)',
+        desc: 'Completes the closed loop! After energy lights the bulb or powers the test lamp, White carries current cleanly back to the Neutral Bus Bar. Always lands on SILVER screws.'
+      },
+      bare: {
+        title: 'BARE COPPER — SAFETY GROUND (0A Normally)',
+        desc: 'Carries ZERO current in normal operation. If a loose Black wire ever touches a metal box or appliance frame, Ground gives fault current an instant escape path to blow the fuse!'
+      }
+    }[sel];
+
+    const cardAttr = (w) => `class="svg-hit" data-action="intro-pick-wire" data-wire="${w}"`;
+
+    return `
+      ${svgDefs(c)}
+      ${svgBackground(c, 'PANEL 02 · MEET THE WIRES — CLICK ANY CONDUCTOR OR TEST A GROUND FAULT')}
+
+      <!-- Top: Romex Label Decoder -->
+      <rect x="28" y="44" width="1064" height="122" rx="14" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="2"/>
+      <text x="54" y="74" fill="${c.muted}" font-size="11.5" font-weight="800">HOW TO READ ROMEX LABELS:</text>
+
+      <rect x="54" y="90" width="106" height="54" rx="8" fill="${c.stageBg}" stroke="#3b82f6" stroke-width="2"/>
+      <text x="107" y="124" text-anchor="middle" fill="#60a5fa" font-size="24" font-weight="900">14</text>
+      <text x="172" y="112" fill="${c.text}" font-size="12" font-weight="800">Wire Thickness (14 AWG)</text>
+      <text x="172" y="132" fill="${c.muted}" font-size="11">Rated up to 15 Amps in homes</text>
+
+      <text x="394" y="128" text-anchor="middle" fill="${c.muted}" font-size="28" font-weight="800">/</text>
+
+      <rect x="414" y="90" width="96" height="54" rx="8" fill="${c.stageBg}" stroke="#f59e0b" stroke-width="2"/>
+      <text x="462" y="124" text-anchor="middle" fill="#f59e0b" font-size="24" font-weight="900">2 or 3</text>
+      <text x="522" y="112" fill="${c.text}" font-size="12" font-weight="800">Colored Insulated Wires</text>
+      <text x="522" y="132" fill="${c.muted}" font-size="11">/2 = Blk+Wht · /3 = Blk+Red+Wht (plus Bare!)</text>
+
+      <rect x="816" y="90" width="112" height="54" rx="8" fill="${c.stageBg}" stroke="${c.ok}" stroke-width="2"/>
+      <text x="872" y="124" text-anchor="middle" fill="${c.ok}" font-size="20" font-weight="900">NM-B</text>
+      <text x="938" y="112" fill="${c.text}" font-size="12" font-weight="800">Indoor Cable</text>
+      <text x="938" y="132" fill="${c.muted}" font-size="11">Non-Metallic dry walls</text>
+
+      <!-- Middle Left: 4 Clickable Conductor Cards -->
+      ${[
+        ['black', 'BLACK · HOT (+12V)', '#1e293b', '#f59e0b', 'Brings power IN → Brass'],
+        ['red', 'RED · 2ND HOT (14/3)', '#ef4444', '#ef4444', '3-Way traveler → Brass'],
+        ['white', 'WHITE · NEUTRAL (-)', '#f8fafc', '#64748b', 'Brings current BACK → Silver'],
+        ['bare', 'BARE · SAFETY GROUND', '#d97706', '#16a34a', 'Emergency escape → Green']
+      ].map(([id, title, fillCol, strokeCol, sub], i) => {
+        const active = sel === id;
+        const cy = 184 + i * 74;
+        return `
+          <g ${cardAttr(id)}>
+            <rect x="28" y="${cy}" width="470" height="62" rx="10" fill="${c.cardBg}" stroke="${active ? c.warn : c.cardStroke}" stroke-width="${active ? 3 : 1.5}"/>
+            <rect x="46" y="${cy + 20}" width="44" height="22" rx="5" fill="${fillCol}" stroke="${strokeCol}" stroke-width="2.5"/>
+            <text x="106" y="${cy + 27}" fill="${c.text}" font-size="12.5" font-weight="800">${title}</text>
+            <text x="106" y="${cy + 45}" fill="${c.muted}" font-size="11.5">${sub}</text>
+          </g>
+        `;
+      }).join('')}
+
+      <!-- Middle Right: Live Cable Cross-Section & Ground Fault Safety Demo -->
+      <rect x="518" y="184" width="574" height="284" rx="14" fill="${c.cardBg}" stroke="${gf ? c.danger : c.cardStroke}" stroke-width="2"/>
+      <text x="805" y="212" text-anchor="middle" fill="${c.text}" font-size="13.5" font-weight="800">
+        ${gf ? '⚠ GROUND FAULT TRIGGERED! FUSE TRIPS INSTANTLY' : 'INSIDE A 14/3 ROMEX CABLE & SAFETY GROUND PATH'}
+      </text>
+
+      <!-- Sheath -->
+      <rect x="548" y="236" width="166" height="128" rx="10" fill="#facc15" fill-opacity="0.22" stroke="#eab308" stroke-width="2.5"/>
+      <text x="631" y="384" text-anchor="middle" fill="${c.muted}" font-size="11" font-weight="700">14/3 Outer Jacket</text>
+
+      <!-- Conductors emerging -->
+      <path d="M714 256 L928 256" stroke="${c.blackWire}" stroke-width="${sel === 'black' ? 12 : 8}" stroke-linecap="round"/>
+      ${!gf ? `<path d="M714 256 L928 256" stroke="${c.hotGlow}" stroke-width="3" class="anim-flow"/>` : ''}
+      <text x="942" y="260" fill="${c.text}" font-size="11.5" font-weight="700">Hot (+12V)</text>
+
+      <path d="M714 284 L928 284" stroke="${c.redWire}" stroke-width="${sel === 'red' ? 12 : 8}" stroke-linecap="round"/>
+      <text x="942" y="288" fill="${c.redWire}" font-size="11.5" font-weight="700">Red (2nd Hot)</text>
+
+      <path d="M714 312 L928 312" stroke="${c.whiteWire}" stroke-width="${sel === 'white' ? 12 : 8}" stroke-linecap="round"/>
+      ${!gf ? `<path d="M928 312 L714 312" stroke="${c.hotGlow}" stroke-width="2.5" class="anim-flow"/>` : ''}
+      <text x="942" y="316" fill="${c.text}" font-size="11.5" font-weight="700">Neutral (-12V)</text>
+
+      <path d="M714 342 L928 342" stroke="${c.copper}" stroke-width="${sel === 'bare' || gf ? 9 : 5}" stroke-linecap="round"/>
+      ${gf ? `<path d="M928 342 L714 342" stroke="#ef4444" stroke-width="3.5" class="anim-flow"/>` : ''}
+      <text x="942" y="346" fill="${gf ? c.danger : c.greenGround}" font-size="11.5" font-weight="800">${gf ? 'FAULT! Trips Fuse' : 'Ground (0A Normal)'}</text>
+
+      ${gf ? `<path d="M920 256 Q936 299 920 342" fill="none" stroke="#ef4444" stroke-width="4" stroke-dasharray="4 3"/>` : ''}
+
+      <g class="svg-hit" data-action="intro-toggle-gf">
+        <rect x="556" y="406" width="498" height="42" rx="9" fill="${gf ? c.ok : '#ef4444'}"/>
+        <text x="805" y="432" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800">
+          ${gf ? '✓ Clear Ground Fault & Reset Fuse' : '⚡ Simulate Ground Fault (Hot Touches Bare Ground)'}
+        </text>
+      </g>
+
+      <!-- Bottom Selected Conductor Explanation -->
+      <rect x="28" y="484" width="1064" height="90" rx="12" fill="${c.cardBg}" stroke="${c.warn}" stroke-width="2"/>
+      <text x="50" y="514" fill="${c.warn}" font-size="13.5" font-weight="800">${wireInfo.title}</text>
+      <text x="50" y="542" fill="${c.text}" font-size="12.5">${wireInfo.desc}</text>
+    `;
+  }
+
+  // PANEL 3: Anatomy of Every Part & Why We Need It
+  function renderPanel3(c) {
+    const sel = state.introPartSel;
+    const part = PARTS_GUIDE.find((x) => x.id === sel) || PARTS_GUIDE[0];
+    const overload = state.introFuseOverload;
+    const pHit = (id) => `class="svg-hit" data-action="intro-pick-part" data-part="${id}"`;
+
+    return `
+      ${svgDefs(c)}
+      ${svgBackground(c, 'PANEL 03 · PARTS ANATOMY — CLICK ANY PART TO LEARN WHAT IT DOES & WHY WE NEED IT')}
+
+      <!-- 8 Visual Part Cards (4x2 Grid) -->
+      ${PARTS_GUIDE.map((pt, idx) => {
+        const col = idx % 4;
+        const row = Math.floor(idx / 4);
+        const x = 28 + col * 268;
+        const y = 46 + row * 176;
+        const active = pt.id === sel;
+
+        return `
+          <g ${pHit(pt.id)}>
+            <rect x="${x}" y="${y}" width="252" height="160" rx="12" fill="${c.cardBg}" stroke="${active ? c.warn : c.cardStroke}" stroke-width="${active ? 3 : 1.8}"/>
+            <rect x="${x + 14}" y="${y + 12}" width="118" height="20" rx="5" fill="${active ? c.warn : c.stageBg}" stroke="${c.cardStroke}"/>
+            <text x="${x + 73}" y="${y + 26}" text-anchor="middle" fill="${active ? '#111827' : c.muted}" font-size="10" font-weight="800">${pt.badge}</text>
+            <text x="${x + 14}" y="${y + 54}" fill="${c.text}" font-size="13" font-weight="800">${pt.name.split('(')[0].trim()}</text>
+            <text x="${x + 14}" y="${y + 74}" fill="${c.muted}" font-size="11">Click to inspect role →</text>
+
+            ${pt.id === 'psu' ? `
+              <rect x="${x + 18}" y="${y + 92}" width="64" height="44" rx="6" fill="#1e293b" stroke="${c.ok}" stroke-width="2"/>
+              <text x="${x + 50}" y="${y + 119}" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="800">12V 5A</text>
+              <text x="${x + 96}" y="${y + 119}" fill="${c.ok}" font-size="11.5" font-weight="700">Safe Pump</text>
+            ` : ''}
+            ${pt.id === 'fuse' ? `
+              <rect x="${x + 18}" y="${y + 92}" width="84" height="44" rx="6" fill="${overload ? '#ef4444' : '#f59e0b'}" fill-opacity="0.2" stroke="${overload ? '#ef4444' : '#f59e0b'}" stroke-width="2"/>
+              <path d="M${x + 36} ${y + 114} L${x + 52} ${y + 114} ${overload ? `M${x + 68} ${y + 114}` : `L${x + 68} ${y + 114}`} L${x + 84} ${y + 114}" stroke="${overload ? '#ef4444' : '#fde047'}" stroke-width="3.5" stroke-linecap="round"/>
+              <text x="${x + 114}" y="${y + 118}" fill="${overload ? c.danger : c.warn}" font-size="11.5" font-weight="800">${overload ? 'MELTED!' : '5A Link OK'}</text>
+            ` : ''}
+            ${pt.id === 'busbars' ? `
+              <rect x="${x + 18}" y="${y + 94}" width="110" height="14" rx="3" fill="url(#brass-grad)"/>
+              <rect x="${x + 18}" y="${y + 116}" width="110" height="14" rx="3" fill="url(#brass-grad)"/>
+              <text x="${x + 140}" y="${y + 116}" fill="${c.muted}" font-size="11" font-weight="700">N &amp; G Rails</text>
+            ` : ''}
+            ${pt.id === 'romex' ? `
+              <rect x="${x + 18}" y="${y + 96}" width="110" height="32" rx="6" fill="${c.whiteWire}" stroke="${c.whiteWireBorder}" stroke-width="2"/>
+              <text x="${x + 73}" y="${y + 116}" text-anchor="middle" fill="#0f172a" font-size="11.5" font-weight="800">14/2 · 14/3</text>
+            ` : ''}
+            ${pt.id === 'boxes' ? `
+              <rect x="${x + 22}" y="${y + 90}" width="44" height="52" rx="5" fill="${c.blueBox}"/>
+              <polygon points="${x+88},${y+98} ${x+100},${y+88} ${x+118},${y+88} ${x+130},${y+98} ${x+130},${y+126} ${x+118},${y+136} ${x+100},${y+136} ${x+88},${y+126}" fill="${c.blueBox}"/>
+              <text x="${x + 144}" y="${y + 118}" fill="${c.muted}" font-size="11" font-weight="700">Shields splices</text>
+            ` : ''}
+            ${pt.id === 'wago' ? `
+              <rect x="${x + 22}" y="${y + 96}" width="60" height="36" rx="5" fill="#cbd5e1" fill-opacity="0.35" stroke="#94a3b8" stroke-width="2"/>
+              <rect x="${x + 28}" y="${y + 88}" width="12" height="14" fill="#f97316"/>
+              <rect x="${x + 46}" y="${y + 88}" width="12" height="14" fill="#f97316"/>
+              <rect x="${x + 64}" y="${y + 88}" width="12" height="14" fill="#f97316"/>
+              <text x="${x + 96}" y="${y + 118}" fill="${c.muted}" font-size="11" font-weight="700">Joins wires</text>
+            ` : ''}
+            ${pt.id === 'outlet' ? `
+              <rect x="${x + 22}" y="${y + 88}" width="44" height="56" rx="5" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+              <circle cx="${x + 44}" cy="${y + 104}" r="10" fill="#e2e8f0" stroke="#64748b"/>
+              <circle cx="${x + 44}" cy="${y + 128}" r="10" fill="#e2e8f0" stroke="#64748b"/>
+              <text x="${x + 78}" y="${y + 118}" fill="${c.muted}" font-size="11" font-weight="700">Plug-in ports</text>
+            ` : ''}
+            ${pt.id === 'switches' ? `
+              <rect x="${x + 22}" y="${y + 88}" width="44" height="56" rx="5" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+              <rect x="${x + 36}" y="${y + 102}" width="16" height="26" rx="3" fill="#2563eb"/>
+              <text x="${x + 78}" y="${y + 118}" fill="${c.muted}" font-size="11" font-weight="700">1-Pole &amp; 3-Way</text>
+            ` : ''}
+          </g>
+        `;
+      }).join('')}
+
+      <!-- Interactive Fuse Overload Mini-Demo Bar + Selected Part Spotlight -->
+      <rect x="28" y="408" width="1064" height="168" rx="14" fill="${c.cardBg}" stroke="${c.warn}" stroke-width="2.2"/>
+      <text x="50" y="438" fill="${c.warn}" font-size="14" font-weight="800">${part.name.toUpperCase()}</text>
+      <text x="50" y="466" fill="${c.text}" font-size="12.5"><tspan font-weight="800" fill="${c.ok}">What it is:</tspan> ${part.what}</text>
+      <text x="50" y="492" fill="${c.text}" font-size="12.5"><tspan font-weight="800" fill="${c.warn}">Why we need it:</tspan> ${part.why}</text>
+      <text x="50" y="518" fill="${c.muted}" font-size="12"><tspan font-weight="800" fill="${c.text}">Real-home equivalent:</tspan> ${part.home}</text>
+
+      <g class="svg-hit" data-action="intro-toggle-overload">
+        <rect x="50" y="532" width="420" height="32" rx="8" fill="${overload ? c.ok : '#ef4444'}"/>
+        <text x="260" y="553" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">
+          ${overload ? '↺ Replace Melted 5A Fuse (Back to 1.5A Normal)' : '🔥 Demo Why Fuses Matter: Push 7A Overload Through 5A Fuse!'}
+        </text>
+      </g>
+    `;
+  }
+
+  // PANEL 4: Series vs. Parallel — Why Houses ALWAYS Wire Outlets in Parallel
+  function renderPanel4(c) {
+    const unplugged = state.introBulbRemoved;
+
+    return `
+      ${svgDefs(c)}
+      ${svgBackground(c, 'PANEL 04 · SERIES VS PARALLEL — CLICK "UNPLUG BULB #1" TO TEST BOTH CIRCUITS')}
+
+      <!-- Left: SERIES (Bad for Outlets!) -->
+      <rect x="28" y="48" width="516" height="430" rx="14" fill="${c.cardBg}" stroke="${c.danger}" stroke-width="2"/>
+      <text x="286" y="78" text-anchor="middle" fill="${c.danger}" font-size="15" font-weight="800">SERIES WIRING (1 CHAIN — BAD FOR HOMES)</text>
+
+      <path d="M84 220 L84 140 L486 140 L486 356 L84 356 L84 290" fill="none" stroke="${unplugged ? '#64748b' : c.hotGlow}" stroke-width="6" stroke-linecap="round"/>
+      ${!unplugged ? `<path d="M84 220 L84 140 L486 140 L486 356 L84 356 L84 290" fill="none" stroke="#fde047" stroke-width="2.5" class="anim-flow"/>` : ''}
+
+      <rect x="50" y="218" width="70" height="72" rx="10" fill="${c.stageBg}" stroke="#f59e0b" stroke-width="2"/>
+      <text x="85" y="258" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="800">12V</text>
+
+      <!-- Series Bulb 1 (Unpluggable) -->
+      <g class="svg-hit" data-action="intro-toggle-unplug">
+        <circle cx="220" cy="140" r="32" fill="${unplugged ? c.stageBg : '#fef08a'}" stroke="${unplugged ? c.danger : '#eab308'}" stroke-width="2.5" stroke-dasharray="${unplugged ? '5 4' : 'none'}"/>
+        <text x="220" y="144" text-anchor="middle" fill="${unplugged ? c.danger : '#111827'}" font-size="11.5" font-weight="800">${unplugged ? 'OUT' : '6V DIM'}</text>
+        <text x="220" y="190" text-anchor="middle" fill="${c.text}" font-size="11.5" font-weight="700">Bulb #1</text>
+      </g>
+
+      <!-- Series Bulb 2 -->
+      <circle cx="376" cy="140" r="32" fill="${unplugged ? '#e2e8f0' : '#fef08a'}" stroke="${unplugged ? c.danger : '#eab308'}" stroke-width="2.5"/>
+      <text x="376" y="144" text-anchor="middle" fill="${unplugged ? c.danger : '#111827'}" font-size="11.5" font-weight="800">${unplugged ? '0V DEAD' : '6V DIM'}</text>
+      <text x="376" y="190" text-anchor="middle" fill="${c.text}" font-size="11.5" font-weight="700">Bulb #2</text>
+
+      <rect x="56" y="388" width="460" height="72" rx="10" fill="${c.stageBg}" stroke="${c.danger}" stroke-width="1.5"/>
+      <text x="286" y="416" text-anchor="middle" fill="${c.danger}" font-size="12.5" font-weight="800">
+        ${unplugged ? 'BLACKOUT! Unplugging Bulb #1 broke the ONLY path!' : 'Voltage splits in half (6V each) → both bulbs glow dimly!'}
+      </text>
+      <text x="286" y="440" text-anchor="middle" fill="${c.muted}" font-size="11.5">Just like cheap old Christmas lights: one missing bulb kills the whole string.</text>
+
+      <!-- Right: PARALLEL (How Homes Work!) -->
+      <rect x="576" y="48" width="516" height="430" rx="14" fill="${c.cardBg}" stroke="${c.ok}" stroke-width="2"/>
+      <text x="834" y="78" text-anchor="middle" fill="${c.ok}" font-size="15" font-weight="800">PARALLEL WIRING (INDEPENDENT BRANCHES — NEC)</text>
+
+      <!-- Main Hot & Neutral Rails -->
+      <path d="M632 220 L632 140 L976 140" fill="none" stroke="${c.blackWireHighlight}" stroke-width="7"/>
+      <path d="M632 140 L976 140" fill="none" stroke="${c.hotGlow}" stroke-width="2.5" class="anim-flow"/>
+      <path d="M976 356 L632 356 L632 290" fill="none" stroke="${c.whiteWire}" stroke-width="7"/>
+      <path d="M976 356 L632 356" fill="none" stroke="${c.hotGlow}" stroke-width="2.5" class="anim-flow"/>
+
+      <!-- Branch 1 -->
+      <line x1="774" y1="140" x2="774" y2="356" stroke="${unplugged ? '#64748b' : c.hotGlow}" stroke-width="5"/>
+      <!-- Branch 2 -->
+      <line x1="946" y1="140" x2="946" y2="356" stroke="${c.hotGlow}" stroke-width="5"/>
+      <line x1="946" y1="140" x2="946" y2="356" stroke="#fde047" stroke-width="2.5" class="anim-flow"/>
+
+      <rect x="598" y="218" width="70" height="72" rx="10" fill="${c.stageBg}" stroke="#f59e0b" stroke-width="2"/>
+      <text x="633" y="258" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="800">12V</text>
+
+      <!-- Parallel Bulb 1 -->
+      <g class="svg-hit" data-action="intro-toggle-unplug">
+        ${!unplugged ? `<circle cx="774" cy="248" r="46" fill="url(#bulb-glow)" class="anim-glow"/>` : ''}
+        <circle cx="774" cy="248" r="30" fill="${unplugged ? c.stageBg : '#fde047'}" stroke="${unplugged ? c.warn : '#f59e0b'}" stroke-width="2.5" stroke-dasharray="${unplugged ? '5 4' : 'none'}"/>
+        <text x="774" y="252" text-anchor="middle" fill="${unplugged ? c.warn : '#111827'}" font-size="11.5" font-weight="900">${unplugged ? 'OUT' : '12.0V'}</text>
+        <text x="774" y="294" text-anchor="middle" fill="${c.text}" font-size="11.5" font-weight="700">Outlet #1</text>
+      </g>
+
+      <!-- Parallel Bulb 2 -->
+      <circle cx="946" cy="248" r="46" fill="url(#bulb-glow)" class="anim-glow"/>
+      <circle cx="946" cy="248" r="30" fill="#fde047" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="946" y="252" text-anchor="middle" fill="#111827" font-size="11.5" font-weight="900">12.0V</text>
+      <text x="946" y="294" text-anchor="middle" fill="${c.text}" font-size="11.5" font-weight="700">Outlet #2</text>
+
+      <rect x="604" y="388" width="460" height="72" rx="10" fill="${c.stageBg}" stroke="${c.ok}" stroke-width="1.5"/>
+      <text x="834" y="416" text-anchor="middle" fill="${c.ok}" font-size="12.5" font-weight="800">
+        ${unplugged ? 'OUTLET #2 STAYS FULL BRIGHT! Each branch has its own path.' : 'Every outlet gets the FULL 12.0V independently!'}
+      </text>
+      <text x="834" y="440" text-anchor="middle" fill="${c.muted}" font-size="11.5">This is why we wire Outlets #1, #2 &amp; #3 in Parallel using pigtails.</text>
+
+      <!-- Bottom Experiment Button -->
+      <g class="svg-hit" data-action="intro-toggle-unplug">
+        <rect x="330" y="502" width="460" height="52" rx="12" fill="${unplugged ? c.ok : '#2563eb'}"/>
+        <text x="560" y="534" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800">
+          ${unplugged ? '↺ Plug Bulb #1 / Outlet #1 Back In' : '🔌 Unplug Bulb #1 to Test Series vs. Parallel!'}
+        </text>
+      </g>
+    `;
+  }
+
+  // PANEL 5: Vision & 12V Safety
+  function renderPanel5(c) {
     const hs = state.safetyHotspot;
     const details = {
       panel: {
@@ -744,7 +1245,7 @@
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 01 · PROJECT VISION & CRITICAL SAFETY PROTOCOL')}
+      ${svgBackground(c, 'PANEL 05 · PROJECT VISION & CRITICAL SAFETY PROTOCOL')}
 
       <g transform="translate(22, 12) scale(0.76)">
         ${svgPlywoodBoard(c)}
@@ -818,8 +1319,8 @@
     `;
   }
 
-  // PANEL 2: Knolling Bench
-  function renderPanel2(c) {
+  // PANEL 6: Knolling Bench
+  function renderPanel6(c) {
     const sel = state.bomSelected;
     const item = BOM_ITEMS.find((b) => b.id === sel) || BOM_ITEMS[0];
     const isSel = (id) => sel === id;
@@ -829,7 +1330,7 @@
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 02 · KNOLLING WORKBENCH — CLICK ANY PART OR CHECK OFF ITEMS IN THE BOM DRAWER')}
+      ${svgBackground(c, 'PANEL 06 · KNOLLING WORKBENCH — CLICK ANY PART OR CHECK OFF ITEMS IN THE BOM DRAWER')}
 
       <rect x="24" y="44" width="1072" height="444" rx="14" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="2"/>
 
@@ -999,12 +1500,12 @@
     `;
   }
 
-  // PANEL 3: Step 1 — Framing & Boxes
-  function renderPanel3(c) {
+  // PANEL 7: Step 1 — Framing & Boxes
+  function renderPanel7(c) {
     const step = state.frameStep;
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 03 · STEP 1 — FRAME THE 48"×24" MOCK WALL & NAIL ON BOXES')}
+      ${svgBackground(c, 'PANEL 07 · STEP 1 — FRAME THE 48"×24" MOCK WALL & NAIL ON BOXES')}
 
       <g class="anim-fade d-1">
         <line x1="70" y1="38" x2="950" y2="38" stroke="${c.muted}" stroke-width="1.5"/>
@@ -1082,15 +1583,15 @@
     `;
   }
 
-  // PANEL 4: Step 2 — Main Panel Cutaway + Main vs Subpanel Bond Toggle
-  function renderPanel4(c) {
+  // PANEL 8: Step 2 — Main Panel Cutaway + Main vs Subpanel Bond Toggle
+  function renderPanel8(c) {
     const f1 = state.p4Fuse1;
     const f2 = state.p4Fuse2;
     const bonded = !state.p4Subpanel;
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 04 · STEP 2 — MAIN PANEL CUTAWAY (CLICK FUSES OR TOGGLE MAIN VS SUBPANEL BOND)')}
+      ${svgBackground(c, 'PANEL 08 · STEP 2 — MAIN PANEL CUTAWAY (CLICK FUSES OR TOGGLE MAIN VS SUBPANEL BOND)')}
 
       <rect x="44" y="48" width="700" height="510" rx="18" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="3"/>
       <rect x="68" y="64" width="240" height="34" rx="7" fill="#f59e0b"/>
@@ -1183,15 +1684,15 @@
     `;
   }
 
-  // PANEL 5: Craft Lab 1 — Strip & Interactive Screw-Torque Physics
-  function renderPanel5(c) {
+  // PANEL 9: Craft Lab 1 — Strip & Interactive Screw-Torque Physics
+  function renderPanel9(c) {
     const cw = state.p5HookMode === 'cw';
     const rot = (state.p5TorqueCount % 4) * 90;
     const cinched = state.p5TorqueCount > 0;
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 05 · CRAFT LAB 1 — NM-B STRIPPING & INTERACTIVE SCREW-TORQUE PHYSICS')}
+      ${svgBackground(c, 'PANEL 09 · CRAFT LAB 1 — NM-B STRIPPING & INTERACTIVE SCREW-TORQUE PHYSICS')}
 
       <!-- Left Half: Romex Rip & 5/8" Strip -->
       <rect x="28" y="48" width="510" height="516" rx="14" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="2"/>
@@ -1287,8 +1788,8 @@
     `;
   }
 
-  // PANEL 6: Craft Lab 2 — Wago 221 / Wire Nuts & Parallel Pigtail Continuity Test
-  function renderPanel6(c) {
+  // PANEL 10: Craft Lab 2 — Wago 221 / Wire Nuts & Parallel Pigtail Continuity Test
+  function renderPanel10(c) {
     const wago = state.p6SpliceMode === 'wago';
     const pigtail = state.p6WiringStyle === 'pigtail';
     const o1Out = state.p6Outlet1Removed;
@@ -1298,7 +1799,7 @@
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 06 · CRAFT LAB 2 — WAGO 221 SPLICING & WHY PARALLEL PIGTAILING MATTERS')}
+      ${svgBackground(c, 'PANEL 10 · CRAFT LAB 2 — WAGO 221 SPLICING & WHY PARALLEL PIGTAILING MATTERS')}
 
       <!-- Left Half: Interactive Wago 221 / Wire Nut Splice -->
       <rect x="28" y="48" width="480" height="516" rx="14" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="2"/>
@@ -1411,15 +1912,15 @@
     `;
   }
 
-  // PANEL 7: Step 3 — Circuit 1 (Parallel Outlets & Half-Hot Switch)
-  function renderPanel7(c) {
+  // PANEL 11: Step 3 — Circuit 1 (Parallel Outlets & Half-Hot Switch)
+  function renderPanel11(c) {
     const swOn = state.p7SwitchOn;
     const broken = state.p7TabBroken;
     const topLive = !broken ? true : swOn;
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 07 · STEP 3 — CIRCUIT 1: PARALLEL OUTLETS & HALF-HOT SWITCH (CLICK SWITCH OR TAB)')}
+      ${svgBackground(c, 'PANEL 11 · STEP 3 — CIRCUIT 1: PARALLEL OUTLETS & HALF-HOT SWITCH (CLICK SWITCH OR TAB)')}
 
       <g transform="translate(8, 14) scale(0.75)">
         ${svgPlywoodBoard(c)}
@@ -1517,8 +2018,8 @@
     `;
   }
 
-  // PANEL 8: Step 4 — Circuit 2 (3-Way Lighting & Travelers)
-  function renderPanel8(c) {
+  // PANEL 12: Step 4 — Circuit 2 (3-Way Lighting & Travelers)
+  function renderPanel12(c) {
     const swA = state.p8SwA;
     const swB = state.p8SwB;
     const lightOn = swA === swB;
@@ -1527,7 +2028,7 @@
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 08 · STEP 4 — CIRCUIT 2: 3-WAY LIGHTING & 14/3 TRAVELERS (CLICK SWITCH A OR B)')}
+      ${svgBackground(c, 'PANEL 12 · STEP 4 — CIRCUIT 2: 3-WAY LIGHTING & 14/3 TRAVELERS (CLICK SWITCH A OR B)')}
 
       <g transform="translate(8, 14) scale(0.75)">
         ${svgPlywoodBoard(c)}
@@ -1630,15 +2131,15 @@
     `;
   }
 
-  // PANEL 9: Hands-On Wire-It-Yourself Interactive Challenge Lab
-  function renderPanel9(c) {
+  // PANEL 13: Hands-On Wire-It-Yourself Interactive Challenge Lab
+  function renderPanel13(c) {
     const ch = WIRING_CHALLENGES[state.p9Idx];
     const conn = state.p9Connected[state.p9Idx] || {};
     const allWired = ch.terminals.every((t) => Boolean(conn[t.id])) && (!ch.requiresTabBreak || state.p9TabBroken);
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 09 · HANDS-ON LAB — SELECT A WIRE ON THE LEFT, THEN CLICK ITS TERMINAL SCREW')}
+      ${svgBackground(c, 'PANEL 13 · HANDS-ON LAB — SELECT A WIRE ON THE LEFT, THEN CLICK ITS TERMINAL SCREW')}
 
       <!-- Wire Palette Column on Stage -->
       <rect x="28" y="48" width="262" height="516" rx="14" fill="${c.cardBg}" stroke="${c.cardStroke}" stroke-width="2"/>
@@ -1734,8 +2235,8 @@
     `;
   }
 
-  // PANEL 10: Step 5 — Live 12V Test Bench, Audible DMM & 5-Mode Fault Lab
-  function renderPanel10(c) {
+  // PANEL 14: Step 5 — Live 12V Test Bench, Audible DMM & 5-Mode Fault Lab
+  function renderPanel14(c) {
     const s = state.sim;
     const ev = evaluateSim();
     const flowCls = s.flowMode === 'conv' ? 'anim-flow' : (s.flowMode === 'elec' ? 'anim-flow-rev' : '');
@@ -1755,7 +2256,7 @@
 
     return `
       ${svgDefs(c)}
-      ${svgBackground(c, 'PANEL 10 · STEP 5 — LIVE TEST BENCH (CLICK FUSES, SWITCHES, OR ANY SOCKET TO PLUG IN TEST LAMP)')}
+      ${svgBackground(c, 'PANEL 14 · STEP 5 — LIVE TEST BENCH (CLICK FUSES, SWITCHES, OR ANY SOCKET TO PLUG IN TEST LAMP)')}
 
       ${svgPlywoodBoard(c)}
       ${svgMainPanelShell(c, { psuOn: s.psuOn, fuse1: s.fuse1Intact, fuse2: s.fuse2Intact, interactive: true })}
@@ -1849,16 +2350,20 @@
 
   function renderMiniPreview(panelId, c) {
     const badges = {
-      1: { bg: '#f59e0b', fg: '#111827', txt: '12V DC ONLY · SAFETY' },
-      2: { bg: '#2563eb', fg: '#ffffff', txt: '24-ITEM BOM · KNOLLING' },
-      3: { bg: '#8b5cf6', fg: '#ffffff', txt: '2×4 STUDS · 5 BOXES' },
-      4: { bg: '#10b981', fg: '#ffffff', txt: 'FUSES · N-G BOND' },
-      5: { bg: '#ea580c', fg: '#ffffff', txt: 'STRIP & SCREW TORQUE' },
-      6: { bg: '#d97706', fg: '#ffffff', txt: 'WAGO 221 · PIGTAILS' },
-      7: { bg: '#f59e0b', fg: '#111827', txt: 'PARALLEL + HALF-HOT' },
-      8: { bg: '#3b82f6', fg: '#ffffff', txt: '14/3 3-WAY SPDT X-RAY' },
-      9: { bg: '#ec4899', fg: '#ffffff', txt: 'WIRE-IT-YOURSELF LAB' },
-      10: { bg: '#10b981', fg: '#ffffff', txt: 'LIVE BENCH + 5 FAULTS' }
+      1: { bg: '#0ea5e9', fg: '#ffffff', txt: 'VOLTS · AMPS · LOOP' },
+      2: { bg: '#eab308', fg: '#111827', txt: '14/2 · 14/3 · GROUND' },
+      3: { bg: '#8b5cf6', fg: '#ffffff', txt: '8 PARTS & WHY NEEDED' },
+      4: { bg: '#10b981', fg: '#ffffff', txt: 'SERIES VS PARALLEL' },
+      5: { bg: '#f59e0b', fg: '#111827', txt: '12V DC ONLY · SAFETY' },
+      6: { bg: '#2563eb', fg: '#ffffff', txt: '24-ITEM BOM · KNOLLING' },
+      7: { bg: '#8b5cf6', fg: '#ffffff', txt: '2×4 STUDS · 5 BOXES' },
+      8: { bg: '#10b981', fg: '#ffffff', txt: 'FUSES · N-G BOND' },
+      9: { bg: '#ea580c', fg: '#ffffff', txt: 'STRIP & SCREW TORQUE' },
+      10: { bg: '#d97706', fg: '#ffffff', txt: 'WAGO 221 · PIGTAILS' },
+      11: { bg: '#f59e0b', fg: '#111827', txt: 'PARALLEL + HALF-HOT' },
+      12: { bg: '#3b82f6', fg: '#ffffff', txt: '14/3 3-WAY SPDT X-RAY' },
+      13: { bg: '#ec4899', fg: '#ffffff', txt: 'WIRE-IT-YOURSELF LAB' },
+      14: { bg: '#10b981', fg: '#ffffff', txt: 'LIVE BENCH + 5 FAULTS' }
     }[panelId];
 
     return `
@@ -1883,45 +2388,57 @@
   // 7. QUICK ACTIONS & SIDE INSPECTOR DRAWERS
   // =========================================================================
   function renderQuickActions(p) {
+    if (p === 1) {
+      return `<button type="button" data-action="intro-toggle-loop" class="ui-btn ${state.introLoopClosed ? 'success' : ''}">Switch Loop: ${state.introLoopClosed ? 'CLOSED' : 'OPEN'}</button>`;
+    }
+    if (p === 2) {
+      return `<button type="button" data-action="intro-toggle-gf" class="ui-btn">${state.introGroundFault ? '↺ Clear Ground Fault' : '⚡ Test Ground Fault'}</button>`;
+    }
     if (p === 3) {
+      return `<button type="button" data-action="intro-toggle-overload" class="ui-btn">${state.introFuseOverload ? '↺ Replace 5A Fuse' : '🔥 Test 7A Overload'}</button>`;
+    }
+    if (p === 4) {
+      return `<button type="button" data-action="intro-toggle-unplug" class="ui-btn primary">${state.introBulbRemoved ? '↺ Plug Bulb #1 Back In' : '🔌 Unplug Bulb #1'}</button>`;
+    }
+    if (p === 7) {
       return [1, 2, 3, 4].map((st) => `
         <button type="button" data-action="p3-step" data-step="${st}"
           class="ui-btn ${state.frameStep === st ? 'primary' : ''}">Beat ${st}</button>
       `).join('');
     }
-    if (p === 4) {
+    if (p === 8) {
       return `
         <button type="button" data-action="p4-toggle-f1" class="ui-btn">Fuse #1: ${state.p4Fuse1 ? 'ON' : 'OFF'}</button>
         <button type="button" data-action="p4-toggle-f2" class="ui-btn">Fuse #2: ${state.p4Fuse2 ? 'ON' : 'OFF'}</button>
         <button type="button" data-action="p4-toggle-bond" class="ui-btn">${state.p4Subpanel ? 'Subpanel' : 'Main Bonded'}</button>
       `;
     }
-    if (p === 5) {
+    if (p === 9) {
       return `<button type="button" data-action="p5-torque" class="ui-btn primary">↻ Torque Screw</button>`;
     }
-    if (p === 6) {
+    if (p === 10) {
       return `
         <button type="button" data-action="p6-remove-o1" class="ui-btn ${state.p6Outlet1Removed ? 'success' : ''}">
           ${state.p6Outlet1Removed ? 'Reinstall Outlet #1' : 'Remove Outlet #1'}
         </button>
       `;
     }
-    if (p === 7) {
+    if (p === 11) {
       return `
         <button type="button" data-action="p7-toggle-tab" class="ui-btn">${state.p7TabBroken ? 'Brass Tab: Broken' : 'Brass Tab: Intact'}</button>
         <button type="button" data-action="p7-toggle-sw" class="ui-btn ${state.p7SwitchOn ? 'success' : ''}">1-Pole Sw: ${state.p7SwitchOn ? 'ON' : 'OFF'}</button>
       `;
     }
-    if (p === 8) {
+    if (p === 12) {
       return `
         <button type="button" data-action="p8-flip-a" class="ui-btn">Flip Sw A (${state.p8SwA})</button>
         <button type="button" data-action="p8-flip-b" class="ui-btn">Flip Sw B (${state.p8SwB})</button>
       `;
     }
-    if (p === 9) {
+    if (p === 13) {
       return `<button type="button" data-action="p9-reset" class="ui-btn">Reset Challenge</button>`;
     }
-    if (p === 10) {
+    if (p === 14) {
       const nextFlow = state.sim.flowMode === 'conv' ? 'Conventional (+→-)' : (state.sim.flowMode === 'elec' ? 'Electron (-→+)' : 'Flow: OFF');
       return `
         <button type="button" data-action="sim-cycle-flow" class="ui-btn active-toggle">${nextFlow}</button>
@@ -1935,7 +2452,46 @@
     const grid = document.getElementById('theater-grid');
     const drawer = document.getElementById('side-drawer');
 
-    if (state.panel === 2) {
+    if (state.panel === 3) {
+      grid.classList.add('with-drawer');
+      drawer.classList.remove('hidden');
+
+      drawer.innerHTML = `
+        <div class="drawer-box">
+          <div class="drawer-header">
+            <div>
+              <h3 class="drawer-title">Beginner Parts Encyclopedia</h3>
+              <p class="brand-sub">Select any part to see why our board needs it</p>
+            </div>
+            <span class="phase-pill font-mono">8 Parts</span>
+          </div>
+          <div style="display:grid; gap:6px; max-height:515px; overflow-y:auto; padding-right:4px;">
+            ${PARTS_GUIDE.map((pt) => {
+              const active = state.introPartSel === pt.id;
+              return `
+                <button type="button" data-action="intro-pick-part" data-part="${pt.id}"
+                  class="ui-btn ${active ? 'active-toggle' : ''}" style="text-align:left; padding:8px 10px;">
+                  <div style="display:flex; justify-content:space-between; gap:6px; align-items:center;">
+                    <strong>${pt.name}</strong>
+                    <span class="font-mono" style="font-size:10px; color:var(--warning);">${pt.badge}</span>
+                  </div>
+                  ${active ? `
+                    <div style="font-weight:400; font-size:11.5px; color:var(--muted); margin-top:5px; line-height:1.45;">
+                      <div><strong style="color:var(--success);">What:</strong> ${pt.what}</div>
+                      <div style="margin-top:3px;"><strong style="color:var(--warning);">Why:</strong> ${pt.why}</div>
+                      <div style="margin-top:3px;"><strong style="color:var(--text);">In a House:</strong> ${pt.home}</div>
+                    </div>
+                  ` : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    if (state.panel === 6) {
       grid.classList.add('with-drawer');
       drawer.classList.remove('hidden');
 
@@ -1982,7 +2538,7 @@
       return;
     }
 
-    if (state.panel === 9) {
+    if (state.panel === 13) {
       grid.classList.add('with-drawer');
       drawer.classList.remove('hidden');
 
@@ -2035,7 +2591,7 @@
       return;
     }
 
-    if (state.panel === 10) {
+    if (state.panel === 14) {
       grid.classList.add('with-drawer');
       drawer.classList.remove('hidden');
 
@@ -2213,7 +2769,11 @@
       7: renderPanel7,
       8: renderPanel8,
       9: renderPanel9,
-      10: renderPanel10
+      10: renderPanel10,
+      11: renderPanel11,
+      12: renderPanel12,
+      13: renderPanel13,
+      14: renderPanel14
     };
     if (opts.reanimate) svg.innerHTML = '';
     svg.innerHTML = renderers[state.panel](c);
@@ -2276,7 +2836,7 @@
     stop3WayCycle();
     state.panel = Math.max(1, Math.min(PANELS.length, num));
     if (state.playing) autoplayStart = performance.now();
-    if (state.panel === 10) recordVerifyObservation();
+    if (state.panel === 14) recordVerifyObservation();
     render({ reanimate: true });
   }
 
@@ -2337,6 +2897,40 @@
         render();
         break;
       }
+
+      // Beginner Panels 1–4
+      case 'intro-toggle-loop':
+        SoundFX.click();
+        state.introLoopClosed = !state.introLoopClosed;
+        render();
+        break;
+      case 'intro-pick-wire':
+        SoundFX.click();
+        state.introWireSel = el.dataset.wire;
+        render();
+        break;
+      case 'intro-toggle-gf':
+        state.introGroundFault = !state.introGroundFault;
+        if (state.introGroundFault) SoundFX.spark();
+        else SoundFX.snap();
+        render();
+        break;
+      case 'intro-pick-part':
+        SoundFX.click();
+        state.introPartSel = el.dataset.part;
+        render();
+        break;
+      case 'intro-toggle-overload':
+        state.introFuseOverload = !state.introFuseOverload;
+        if (state.introFuseOverload) SoundFX.spark();
+        else SoundFX.snap();
+        render();
+        break;
+      case 'intro-toggle-unplug':
+        SoundFX.snap();
+        state.introBulbRemoved = !state.introBulbRemoved;
+        render();
+        break;
 
       // Panel 1
       case 'p1-hotspot':

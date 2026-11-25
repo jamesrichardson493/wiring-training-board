@@ -7,8 +7,9 @@
 ## Architecture (Zero-Build Static)
 
 - `index.html` — Studio HUD, 16:9 interactive SVG theater stage, director's script dock, and 14-panel storyboard grid
-- `styles.css` — Dark anodized slate & light architectural drafting themes, glassmorphic HUD, and SVG path/flow animations
+- `styles.css` — Dark anodized slate & light architectural drafting themes, glassmorphic HUD, AI Tutor drawer, and SVG animations
 - `app.js` — 14 panel renderers, procedural Web Audio SFX (`SoundFX`), beginner physics/parts labs, live circuit solver, and 5-mode fault lab
+- `tutor.js` — Context-aware AI Wiring Tutor (works immediately in Built-in Free mode, plus optional `gemini-2.5-flash-lite`, `gpt-4o-mini`, or custom endpoint via browser `localStorage`)
 
 ## Highlights Across the 14 Panels
 

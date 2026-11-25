@@ -762,3 +762,231 @@ h1, h2, h3, .font-display {
 .svg-hit:hover {
   filter: brightness(1.12) drop-shadow(0 0 7px rgba(245, 158, 11, 0.6));
 }
+
+/* =========================================================================
+   AI WIRING TUTOR FLOATING HELPER
+   ========================================================================= */
+.tutor-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  background: var(--surface-solid);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.55);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.tutor-fab:hover {
+  transform: translateY(-2px);
+  border-color: var(--warning);
+}
+
+.tutor-fab-pill {
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+
+.tutor-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 65;
+  width: min(400px, calc(100vw - 24px));
+  max-height: min(610px, calc(100vh - 36px));
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.tutor-header {
+  padding: 11px 14px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tutor-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+}
+
+.tutor-model-pill {
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid var(--primary);
+  color: var(--text);
+}
+
+.tutor-ctx-line {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.tutor-settings {
+  padding: 11px 14px;
+  background: var(--surface-solid);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 8px;
+}
+
+.tutor-set-row {
+  display: grid;
+  gap: 4px;
+}
+
+.tutor-set-row label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.tutor-set-row select,
+.tutor-set-row input {
+  width: 100%;
+  padding: 6px 9px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+}
+
+.tutor-hint {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.tutor-hint a {
+  color: var(--primary);
+}
+
+.tutor-chips {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: var(--surface-2);
+}
+
+.tutor-chip {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface-solid);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  transition: border-color 0.15s ease;
+}
+
+.tutor-chip:hover {
+  border-color: var(--primary);
+}
+
+.tutor-messages {
+  flex: 1;
+  min-height: 210px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.tutor-msg {
+  max-width: 90%;
+  padding: 9px 11px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
+.tutor-msg.user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: var(--primary-fg);
+  border-bottom-right-radius: 4px;
+}
+
+.tutor-msg.bot {
+  align-self: flex-start;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+.tutor-msg code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.18);
+}
+
+.tutor-typing {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tutor-input-row {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+  display: flex;
+  gap: 8px;
+}
+
+.tutor-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--surface-solid);
+  color: var(--text);
+  font: inherit;
+  font-size: 12.5px;
+}
+
+.tutor-input-row input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+

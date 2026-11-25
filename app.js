@@ -2780,6 +2780,9 @@
 
     renderSideDrawer();
     renderFilmstrip();
+    if (window.WiringTutor && window.WiringTutor.onContextChange) {
+      window.WiringTutor.onContextChange();
+    }
   }
 
   // =========================================================================
@@ -2890,6 +2893,9 @@
         SoundFX.enabled = !SoundFX.enabled;
         if (SoundFX.enabled) SoundFX.snap();
         render();
+        break;
+      case 'toggle-tutor':
+        if (window.WiringTutor) window.WiringTutor.toggle();
         break;
       case 'toggle-theme': {
         const light = document.documentElement.classList.toggle('light');
@@ -3266,8 +3272,11 @@
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-    if (e.key === 'ArrowRight' && state.panel < PANELS.length) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+    if (e.key === '?') {
+      e.preventDefault();
+      if (window.WiringTutor) window.WiringTutor.toggle();
+    } else if (e.key === 'ArrowRight' && state.panel < PANELS.length) {
       goToPanel(state.panel + 1);
     } else if (e.key === 'ArrowLeft' && state.panel > 1) {
       goToPanel(state.panel - 1);
@@ -3290,6 +3299,33 @@
       render();
     }
   });
+
+  window.getWiringTutorContext = function () {
+    const p = PANELS[state.panel - 1];
+    let simSummary = null;
+    if (state.panel === 14) {
+      const ev = evaluateSim();
+      const s = state.sim;
+      simSummary = [
+        `PSU: ${s.psuOn ? 'ON (12.04V)' : 'OFF'}`,
+        `Fuse #1: ${s.fuse1Intact ? 'OK' : 'BLOWN'} | Fuse #2: ${s.fuse2Intact ? 'OK' : 'BLOWN'}`,
+        `Outlet #3 Tab: ${s.outlet3TabBroken ? 'Broken (Properly Split)' : 'INTACT (Backfeeding)'}`,
+        `14/3 Red Traveler: ${s.redTravelerConnected ? 'Connected' : 'LOOSE'} | O1→O2 Neutral: ${s.neutralSpliceIntact ? 'Intact' : 'OPEN'}`,
+        `Test Lamp at ${s.lampSocket.toUpperCase()}: ${ev.probedHot ? '12.04V (LIT)' : '0.00V (DARK)'}`,
+        `Ceiling Light: ${ev.ceilingLightOn ? 'ON' : 'OFF'} (SwA=${s.sw3WayA}, SwB=${s.sw3WayB})`,
+        `Active Fault Drill: ${s.activeFault}`
+      ].join('\n');
+    }
+    return {
+      panel: p.id,
+      totalPanels: PANELS.length,
+      phase: p.phase,
+      title: p.title,
+      narration: p.narration,
+      callouts: p.callouts,
+      simSummary
+    };
+  };
 
   window.addEventListener('themechange', () => {
     render();

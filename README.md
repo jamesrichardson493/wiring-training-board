@@ -1,30 +1,29 @@
-# 12V DC Residential Wiring Training Board
+# 12V DC Residential Wiring Masterclass
 
-Interactive 8-panel animated build storyboard, materials knolling bench, and live 12V DC residential wiring simulator & fault troubleshooter.
+10-panel cinema-grade animated build storyboard, interactive BOM knolling bench, hands-on wire-it-yourself terminal lab, and live 12V DC circuit simulator & fault troubleshooter.
 
 > **CRITICAL SAFETY RULE:** Label the training board, both 12V DC E26 LED bulbs, and your DIY 2-prong polarized test plug **"12V DC ONLY"**. Never connect this training board or DIY test lamp to 120V AC household wall power.
 
-## Features
+## Architecture (Zero-Build Static)
 
-- **Theater Mode & 8-Panel Storyboard Grid**: Step through all 8 panels (`←`/`→`), auto-play at `0.75x` / `1.0x` / `1.5x` (`Space`), replay animations (`R`), or open the full grid (`G`).
-- **BOM Knolling Bench (Panel 2)**: Interactive overhead layout of all 24 materials, devices, and tools with category filters and a checkable progress list.
-- **Step-by-Step Animated Build (Panels 3–7)**:
-  - **Step 1**: Framing `48" × 24"` plywood with three `2×4` studs, Main Panel enclosure, nail-on single-gang boxes, and ceiling octagon box.
-  - **Step 2**: Inside the Main Panel — `+12V` blade fuse block, `-12V` Neutral Bus Bar, and Neutral-to-Ground bonding jumper.
-  - **Craft Closeups**: `14/2` NM-B jacket ripping, `5/8"` strip gauge, clockwise vs. counter-clockwise J-hooks, and Wago 221 / wire-nut parallel pigtails.
-  - **Step 3 (Circuit 1)**: `14/2` parallel outlets (`#1`–`#3`), breaking the brass hot-side tab on Outlet `#3` while preserving the silver neutral tab, and black-taped switch-loop wiring.
-  - **Step 4 (Circuit 2)**: `14/2` + `14/3` 3-way lighting circuit with live X-ray SPDT contact diagram and 4-state truth table.
-- **Live 12V Test Bench & Fault Lab (Panel 8)**: Toggle the 12V 5A PSU, Fuse #1/#2, and all switches; plug the DIY 12V test lamp into any of the 6 receptacle sockets; probe DC voltage or Neutral–Ground continuity on the Digital Multimeter; auto-verify the Step 5 inspection checklist; and practice troubleshooting **Blown Fuse #1**, **Unbroken Brass Tab**, and **Loose Red Traveler** faults.
+- `index.html` — Studio HUD, 16:9 interactive SVG theater stage, director's script dock, and 10-panel storyboard grid
+- `styles.css` — Dark anodized slate & light architectural drafting themes, glassmorphic HUD, and SVG path/flow animations
+- `app.js` — 10 panel renderers, procedural Web Audio SFX (`SoundFX`), interactive craft labs, live circuit solver, and 5-mode fault lab
 
-## Local Preview
+## Highlights Across the 10 Panels
 
-Zero-build static site — open directly via any static HTTP server:
+1. **Vision & Safety (`12V DC ONLY`)**: Blueprint laser scan + 3 clickable safety label stamps.
+2. **Knolling Bench & 24-Item BOM**: Filterable parts & tools workbench with live completion progress.
+3. **Step 1 · Framing & Boxes**: 4-beat animated `48" × 24"` plywood, `2×4` studs, Main Panel, nail-on boxes, and ceiling octagon box assembly.
+4. **Step 2 · Main Panel Cutaway**: `+12V` blade fuse block, `-12V` Neutral Bus, Ground Bus, Main Bonding Jumper, and Main vs. Subpanel bonding toggle.
+5. **Craft Lab 1 · Strip & Screw Torque**: `14/2` NM-B `5/8"` strip gauge + live Clockwise vs. Counter-Clockwise screw-torque physics simulator.
+6. **Craft Lab 2 · Pigtails & Parallel Continuity**: Interactive Wago 221 levers / wire nuts + "Remove Outlet #1" live parallel-vs-series test.
+7. **Step 3 · Circuit 1 (Parallel & Half-Hot)**: `14/2` routing + pliers animation to snap Outlet #3's brass hot tab while keeping silver neutral intact + NEC taped switch loop.
+8. **Step 4 · Circuit 2 (3-Way Lighting)**: `14/2` + `14/3` travelers with synchronized X-ray SPDT blades and 4-state truth table.
+9. **Hands-On Wire-It-Yourself Lab**: 3 progressive click-to-wire terminal challenges with real-time error feedback.
+10. **Step 5 · Live Test Bench & Fault Lab**: Tethered DIY 12V test lamp, `V DC` / `Ω` DMM with continuity beep, Conventional vs. Electron flow visualization, auto-verifying Inspection Certificate, and 5 fault troubleshooting drills.
 
-```bash
-python3 -m http.server 8080
-```
+## Live Site & Local Preview
 
-## Live GitHub Pages
-
-Once published via `publish_github.py`:
-`https://jamesrichardson493.github.io/wiring-training-board/`
+- **Live GitHub Pages:** https://jamesrichardson493.github.io/wiring-training-board/
+- **Local Server:** `python3 -m http.server 8080`
